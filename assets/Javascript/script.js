@@ -103,6 +103,10 @@ const makeItClickable = function () {
   h1.addEventListener("click", function () {
     if (text.length > 0) {
       h1.innerText = text.slice(0, -1);
+      text = h1.innerText;
+    } else {
+      h1.innerText = text;
+      text = h1.innerText;
     }
   });
 };
