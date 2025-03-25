@@ -177,4 +177,21 @@ hideAllImages();
        Crea una funzione che cambi il colore del h2 con id "changeMyColor" con un colore random ad ogni click ricevuto
      */
 
-const changeColorWithRandom = function () {};
+const changeColorWithRandom = function () {
+  const h2Element = document.getElementById("changeMyColor");
+
+  h2Element.addEventListener("click", function () {
+    const getRandomColor = () => {
+      const letters = "0123456789ABCDEF";
+      let color = "#";
+      for (let i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    };
+
+    h2Element.style.color = getRandomColor();
+  });
+};
+
+changeColorWithRandom();
