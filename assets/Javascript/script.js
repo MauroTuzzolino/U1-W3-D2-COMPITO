@@ -22,7 +22,13 @@ addClassToTitle("Nome Classe");
         Scrivi una funzione che cambi il testo dei p figli di un div
        */
 
-const changePcontent = function () {};
+const changePcontent = function (newText) {
+  document.querySelectorAll("div > p").forEach((p) => {
+    p.textContent = newText;
+  });
+};
+
+changePcontent("Nuovo Testo.");
 
 /* ESERCIZIO 4
         Scrivi una funzione che cambi la proprietà href di ogni link (tranne quello nel footer) con il valore https://www.google.com
@@ -67,13 +73,25 @@ addParagraph("Sono il nuovo paragrafo.");
         Scrivi una funzione che faccia scomparire la prima lista non ordinata
      */
 
-const hideFirstUl = function () {};
+const hideFirstUl = function () {
+  const firstList = document.querySelectorAll("ul");
+  firstList[0].style.display = "none";
+};
+
+hideFirstUl();
 
 /* ESERCIZIO 8 
         Scrivi una funzione che renda verde il background di ogni lista non ordinata
        */
 
-const paintItGreen = function () {};
+const paintItGreen = function () {
+  const lists = document.querySelectorAll("ul");
+  for (let i = 0; i < lists.length; i++) {
+    lists[i].style.backgroundColor = "green";
+  }
+};
+
+paintItGreen();
 
 /* ESERCIZIO 9
         Scrivi una funzione che rimuova l'ultima lettera dall'h1 ogni volta che l'utente lo clicca
@@ -81,11 +99,15 @@ const paintItGreen = function () {};
 
 const makeItClickable = function () {};
 
+makeItClickable();
+
 /* ESERCIZIO 10
         Crea una funzione che, al click sul footer, riveli l'URL del link interno come contenuto di un alert()
        */
 
 const revealFooterLink = function () {};
+
+revealFooterLink();
 
 /* ESERCIZIO 11
         Crea una funzione che crei una tabella nell'elemento con id "tableArea". 
@@ -93,6 +115,8 @@ const revealFooterLink = function () {};
      */
 
 const generateTable = function () {};
+
+generateTable();
 
 /* ESERCIZIO 12
         Crea una funzione che aggiunga una riga alla tabella precedentemente creata e fornisca i dati necessari come parametri
